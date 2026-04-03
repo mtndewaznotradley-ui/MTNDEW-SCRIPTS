@@ -24,9 +24,21 @@ body {
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 20px;
   font-weight: bold;
   color: #00ffcc;
+}
+
+.ai {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #222;
+  color: #aaa;
+  border: 1px solid #333;
 }
 
 .discord {
@@ -110,7 +122,11 @@ button {
 <body>
 
 <div class="topbar">
-  <div class="title">MTNDEW Scripts</div>
+  <div class="title">
+    MTNDEW Scripts
+    <div class="ai">ChatGPT UI</div>
+  </div>
+
   <div class="discord">
     Discord: <a href="https://discord.gg/Gx3UPpzq3M" target="_blank">Join Server</a>
   </div>
