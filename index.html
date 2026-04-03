@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MTNDEW Scripts</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* TOP BAR */
+.topbar {
+  height: 60px;
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+.discord {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.discord a {
+  color: #00ffcc;
+  text-decoration: none;
+}
+
+/* MAIN LAYOUT */
+.container {
+  display: flex;
+}
+
+/* LEFT PANEL */
+.left {
+  width: 200px;
+  background: #1a1a1a;
+  height: calc(100vh - 60px);
+  padding: 20px;
+}
+
+.tab {
+  padding: 12px;
+  background: #2a2a2a;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tab:hover {
+  background: #3a3a3a;
+}
+
+/* RIGHT PANEL */
+.right {
+  flex: 1;
+  padding: 30px;
+}
+
+.box {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  background: #111;
+  color: #00ffcc;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #444;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="title">MTNDEW Scripts</div>
+  <div class="discord">
+    Discord: <a href="https://discord.gg/Gx3UPpzq3M" target="_blank">Join Server</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left">
+    <h3>Menu</h3>
+    <div class="tab" onclick="openTab()">Draw & Slide</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div id="panel" class="box">
+      <h2>Script Box</h2>
+
+      <textarea id="scriptBox">
+-- your script goes here
+print("Hello World")
+      </textarea>
+
+      <button onclick="copyText()">Copy</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" onclick="joinDiscord()">
+Join our Discord 📢
+</div>
+
+<script>
+function openTab() {
+  document.getElementById("panel").style.display = "flex";
+}
+
+function copyText() {
+  const text = document.getElementById("scriptBox");
+  text.select();
+  document.execCommand("copy");
+  alert("Copied!");
+}
+
+function joinDiscord() {
+  window.open("https://discord.gg/Gx3UPpzq3M", "_blank");
+}
+</script>
+
+</body>
+</html>
